@@ -7104,11 +7104,6 @@ wl_android_set_adps_mode(struct net_device *dev, const char* string_num)
 	adps_mode = bcm_atoi(string_num);
 	WL_ERR(("%s: SET_ADPS %d\n", __FUNCTION__, adps_mode));
 
-	if ((adps_mode < 0) && (1 < adps_mode)) {
-		WL_ERR(("%s: Invalid value %d.\n", __FUNCTION__, adps_mode));
-		return -EINVAL;
-	}
-
 	err = dhd_enable_adps(dhdp, adps_mode);
 	if (err != BCME_OK) {
 		WL_ERR(("failed to set adps mode %d, error = %d\n", adps_mode, err));
