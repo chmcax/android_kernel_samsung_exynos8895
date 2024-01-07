@@ -6,3 +6,4 @@ obj-$(CONFIG_FIMC_BSC_V1_20_0) += fimc-is-hw-bsc-v1_20_0.o
 
 EXTRA_CFLAGS += -Idrivers/media/platform/exynos/fimc-is2
 EXTRA_CFLAGS += -Idrivers/media/platform/exynos/fimc-is2/include
+EXTRA_CFLAGS += -Wno-error=bool-operation # Find a proper FIX, this is a HACK
